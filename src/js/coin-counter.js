@@ -1,42 +1,42 @@
+
 // This function counts the coins
-export function Counter(amount) {
-  let quarterCount = 0;
-  let dimeCount = 0;
-  let nickelCount = 0;
-  let pennyCount = 0;
-  
-  if (amount === 0 ) {
+export const Counter = (inputAmount, remainingAmount, quarters, dimes, nickels) => {
+
+  // is it a number?
+  if (isNaN(inputAmount)) {
     return "Return only numbers greater than 0.00!";
   }
-  else if (amount >= .25) {
-    const RemainderAfterQuarters = amount % .25;
-    quarterCount = (amount - RemainderAfterQuarters) / .25;
-    return Counter(RemainderAfterQuarters);
+
+  // Does remainingAmount have value?
+  else if (remainingAmount === undefined) {
+    return Counter(inputAmount, inputAmount, 0, 0, 0);
   }
-  else if (amount >= .10) {
-    const RemainderAfterDimes = amount % .10;
-    dimeCount = (amount - RemainderAfterDimes) / .10;
-    return Counter(RemainderAfterDimes);
+
+  // Counting the Coins
+  else if (remainingAmount >= .25) {
+    const RemainderAfterQuarters = remainingAmount % .25;  // .35-.25 = .1
+    const quarterCount = (remainingAmount - RemainderAfterQuarters) / .25; // .35-.1 = .25/.25 = 1
+    return Counter(inputAmount, RemainderAfterQuarters, quarterCount, 0, 0);
+  }                // .1,  1, 0, 0
+  else if (remainingAmount >= .10) {
+    const RemainderAfterDimes = remainingAmount % .10;
+    const dimeCount = (remainingAmount - RemainderAfterDimes) / .10;
+    return Counter(inputAmount, RemainderAfterDimes, quarters, dimeCount, 0);
   }
-  else if (amount >= .05) {
-    const RemainderAfterNickels = amount % .05;
-    nickelCount = (amount - RemainderAfterNickels) / .05;
-    return Counter(RemainderAfterNickels);
+  else if (remainingAmount >= .05) {
+    const RemainderAfterNickels = remainingAmount % .05;
+    const nickelCount = (remainingAmount - RemainderAfterNickels) / .05;
+    return Counter(inputAmount, RemainderAfterNickels, quarters, dimes, nickelCount);
   }
   else {
-    pennyCount = amount;
+    console.log(`This amount of ${inputAmount} is broken up into ${quarters} quarters, ${dimes} dimes, ${nickels} nickels.`);
   }
   // return printToDOM(quarterCount)(dimeCount)(nickelCount)(pennyCount);
-  console.log(quarterCount);
-  console.log(dimeCount);
-  console.log(nickelCount);
-  console.log(pennyCount);
+  // console.log(quarterCount);
+  // console.log(dimeCount);
+  // console.log(nickelCount);
+  // console.log(pennyCount);
 }
 
-// This function reads the coin count to the DOM
- 
 
-// console.log(quarterCount);
-// console.log(dimeCount);
-// console.log(nickelCount);
-// console.log(pennyCount);
+Counter(4.99);

@@ -1,54 +1,13 @@
 /* eslint-disable no-undef */
-import Counter from "./../src/js/coin-counter.js";
+import { Counter } from "./../src/js/coin-counter.js";
 
 describe("Counter", () => {
-  test("Run Counter function and have a return", () => {
-    let CounterReturn = Counter(0);
-    expect(CounterReturn).toMatch("Return only numbers greater than 0.00!");
+  test("Run Counter function and return string", () => {
+    let CounterReturn = Counter("test");
+    let outputString = "Return only numbers greater than 0.00!";
+    expect(CounterReturn).toMatch(outputString);
   });
-  // test("", () => {
-  //   expect().toEqual();
-  // });
-  // test("", () => {
-  //   expect().toEqual();
-  // });
+  test("Check to see if the inputAmount is populating remainingAmount ", () => {
+    let CounterReturn = Counter(1);
+  });
 });
-
-// describe('AgeCalculator', () => {
-//   let ageCalculator;
-//   beforeEach(() => {
-//     ageCalculator = populate();
-//     return ageCalculator;
-//   });
-//   test('Create the ageCalculator object using the AgeCalculator constructor', () => {
-//     expect(ageCalculator);
-//   });
-//   test('Check averageEarthLifespan to make sure object is created', () => {
-//     expect(ageCalculator.averageEarthLifespan).toEqual(85);
-//   });
-//   test('Create the planet object using the Planet constructor & store in ageCalculator', () => {
-//     expect(ageCalculator.planets[0].name).toMatch("Mercury");
-//     expect(ageCalculator.planets[8].name).toMatch("Pluto");
-//   });
-//   test('Store users age in ageCalculator.age', () => {
-//     expect(ageCalculator.earthAge).toEqual(32);
-//   });
-//   test('Find input planets year length in days', () => {
-//     const uranus = ageCalculator.planets[6]
-//     expect(uranus.yearLengthInDays).toEqual(30687);
-//   });
-//   test('calculate users age on planet', () => {
-//     const uranus = ageCalculator.planets[6]
-//     const ageOnUranus = ageCalculator.calcAge(uranus, 32);
-//     expect(ageOnUranus).toEqual("0.38");
-//   });
-//   test('calculate average lifespan on each planet', () => {
-//     const uranusLifespan = ageCalculator.planets[6].averageLifespan
-//     expect(uranusLifespan).toEqual("1.01");
-//   });
-//   test('calculate difference between average age & input age.', () => {
-//     ageCalculator.calcYearsFromLifespan(ageCalculator)
-//     const earthDifference = ageCalculator.planets[2].yearsFromLifespan;
-//     expect(earthDifference).toEqual(53);
-//   });
-// });
