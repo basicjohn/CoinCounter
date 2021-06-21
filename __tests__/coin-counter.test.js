@@ -2,8 +2,16 @@ import {populate} from './../src/js/coin-counter.js';
 
 
 describe('CointCounter'), () => {
-  let ''
-}
+  test('', () => {
+    expect().toEqual();
+  });
+  test('', () => {
+    expect().toEqual();
+  })
+  test('', () => {
+    expect().toEqual();
+  })  
+});
 
 
 
