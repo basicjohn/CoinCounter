@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
 import Counter from "./../src/js/coin-counter.js";
 
-describe("CoinCounter", () => {
-  test("Create CoinCounter object using CoinCounter constructor", () => {
-    expect(Counter(0)).toHaveReturned(
-      "Return only numbers greater than 0.00!"
-    );
+describe("Counter", () => {
+  test("Run Counter function and have a return", () => {
+    let CounterReturn = Counter(0);
+    expect(CounterReturn).toMatch("Return only numbers greater than 0.00!");
   });
   // test("", () => {
   //   expect().toEqual();
