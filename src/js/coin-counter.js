@@ -29,14 +29,12 @@ export const Counter = (inputAmount, remainingAmount, quarters, dimes, nickels) 
     return Counter(inputAmount, RemainderAfterNickels, quarters, dimes, nickelCount);
   }
   else {
-    console.log(`This amount of ${inputAmount} is broken up into ${quarters} quarters, ${dimes} dimes, ${nickels} nickels.`);
+    const pennyCount = Math.round(remainingAmount / .01);
+    return `This amount of ${inputAmount} is broken up into ${quarters} quarters, ${dimes} dimes, ${nickels} nickels and ${pennyCount} cents.`;
   }
   // return printToDOM(quarterCount)(dimeCount)(nickelCount)(pennyCount);
   // console.log(quarterCount);
   // console.log(dimeCount);
   // console.log(nickelCount);
   // console.log(pennyCount);
-}
-
-
-Counter(4.99);
+};

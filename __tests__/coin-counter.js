@@ -8,6 +8,8 @@ describe("Counter", () => {
     expect(CounterReturn).toMatch(outputString);
   });
   test("Check to see if the inputAmount is populating remainingAmount ", () => {
-    let CounterReturn = Counter(1);
+    let inputAmount = 0.01;
+    let outputString = Counter(inputAmount);
+    expect(outputString).toMatch("This amount of 0.01 is broken up into 0 quarters, 0 dimes, 0 nickels and 1 cents.");
   });
 });
