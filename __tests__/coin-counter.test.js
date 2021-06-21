@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
-import { CoinCounter } from "./../src/js/coin-counter.js";
+import Counter from "./../src/js/coin-counter.js";
 
 describe("CoinCounter", () => {
   test("Create CoinCounter object using CoinCounter constructor", () => {
-    expect(CoinCounter(0)).toHaveReturned(
+    expect(Counter(0)).toHaveReturned(
       "Return only numbers greater than 0.00!"
     );
   });
