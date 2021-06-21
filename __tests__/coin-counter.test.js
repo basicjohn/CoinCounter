@@ -1,19 +1,19 @@
-import {populate} from './../src/js/coin-counter.js';
+/* eslint-disable no-undef */
+import { CoinCounter } from "./../src/js/coin-counter.js";
 
-
-describe('CointCounter'), () => {
-  test('', () => {
-    expect().toEqual();
+describe("CoinCounter", () => {
+  test("Create CoinCounter object using CoinCounter constructor", () => {
+    expect(CoinCounter(0)).toHaveReturned(
+      "Return only numbers greater than 0.00!"
+    );
   });
-  test('', () => {
-    expect().toEqual();
-  })
-  test('', () => {
-    expect().toEqual();
-  })  
+  // test("", () => {
+  //   expect().toEqual();
+  // });
+  // test("", () => {
+  //   expect().toEqual();
+  // });
 });
-
-
 
 // describe('AgeCalculator', () => {
 //   let ageCalculator;
